@@ -125,6 +125,17 @@ More global styles
   text-transform: uppercase;
   background: var(--clr-primary);
   padding: 0.7rem 1.5rem;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--clr-primary-light);
+}
+
+.center {
+  width: 80vw;
+  max-width: 1178px;
+  margin: 0 auto;
 }
 
 /*
@@ -232,19 +243,17 @@ Skills
 .skills {
   background: var(--clr-grey-10);
   display: grid;
-  padding: 3rem 0;
-  gap: 3rem;
 }
 
 .skill {
   display: grid;
-  justify-content: center;
   justify-items: center;
-  border: 2px solid transparent;
+  padding: 3rem 0.2rem;
+  transition: var(--transition);
 }
 
 .skill:hover {
-  border-bottom: 2px solid var(--clr-primary);
+  box-shadow: 0 2px var(--clr-primary);
 }
 
 .skill:hover span {
@@ -264,7 +273,7 @@ Skills
   color: var(--clr-grey-5);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 630px) {
   .skills {
     grid-template-columns: 1fr 1fr;
   }
@@ -273,5 +282,66 @@ Skills
 @media screen and (min-width: 1300px) {
   .skills {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/*
+=============== 
+about
+===============
+*/
+
+.about {
+  padding: 6rem 0;
+  display: grid;
+}
+
+.about-img-container {
+  margin-bottom: 3rem;
+  border: 5px solid var(--clr-primary);
+  overflow: hidden;
+}
+
+.about-img-container img {
+  transition: var(--transition);
+}
+
+.about-img-container img:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+
+.about-banner h3 {
+  font-family: var(--ff-secondary);
+  font-size: 1.5rem;
+  color: var(--clr-primary);
+}
+
+.about-banner h2 {
+  margin-bottom: 1.5rem;
+}
+
+.about-banner p {
+  width: 20rem;
+  color: var(--clr-grey-5);
+}
+
+.about-btn {
+  padding: 0.3rem 1.5rem;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 1178px) {
+  .about {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5rem;
+  }
+
+  .about-img-container {
+    margin: 0;
+  }
+
+  .about-img-container img {
+    height: 100%;
   }
 }
