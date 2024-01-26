@@ -4,7 +4,7 @@ Fonts
 ===============
 */
 
-@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel");
+@import url('https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel');
 
 /*
 =============== 
@@ -19,8 +19,8 @@ Variables
   --clr-grey-5: #617d98;
   --clr-grey-10: #f1f5f8;
   --clr-white: #fff;
-  --ff-primary: "Catamaran", sans-serif;
-  --ff-secondary: "Grand Hotel", cursive;
+  --ff-primary: 'Catamaran', sans-serif;
+  --ff-secondary: 'Grand Hotel', cursive;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -124,7 +124,7 @@ More global styles
   color: var(--clr-white);
   text-transform: uppercase;
   background: var(--clr-primary);
-  padding: 0.7rem 1.5rem;
+  padding: 0.5rem 1rem;
   transition: var(--transition);
 }
 
@@ -159,17 +159,11 @@ header
 }
 
 .header {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-    url(../images/main-bcg.jpeg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: #3b3d38;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 100%; */
 }
 
 .header-info {
@@ -225,6 +219,17 @@ header
   }
   .header-info h1 {
     font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+      url(../images/main-bcg.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 }
 
@@ -328,8 +333,7 @@ about
 }
 
 .about-btn {
-  padding: 0.3rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 @media screen and (min-width: 1178px) {
@@ -344,5 +348,59 @@ about
 
   .about-img-container img {
     height: 100%;
+  }
+}
+
+/*
+=============== 
+about
+===============
+*/
+
+.section-products {
+  background: var(--clr-grey-10);
+  padding: 6rem 0;
+}
+
+.products-banner h3 {
+  color: var(--clr-primary);
+  font-family: var(--ff-secondary);
+  font-size: 1.5rem;
+}
+
+.products-banner p {
+  color: var(--clr-grey-5);
+}
+
+.products-banner a {
+  display: inline-block;
+  margin-bottom: 4rem;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+}
+
+.products-container img {
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.products-container .price {
+  color: var(--clr-primary);
+}
+
+@media screen and (min-width: 778px) {
+  .products-container {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1178px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
