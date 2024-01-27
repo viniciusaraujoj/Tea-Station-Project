@@ -14,7 +14,7 @@ Variables
 
 :root {
   --clr-primary: #678e3e;
-  --clr-primary-light: #97c763;
+  --clr-primary-light: #beed8c;
   --clr-grey-1: #102a42;
   --clr-grey-5: #617d98;
   --clr-grey-10: #f1f5f8;
@@ -152,6 +152,7 @@ header
   color: var(--clr-primary);
   cursor: pointer;
   transition: var(--transition);
+  z-index: 2;
 }
 
 .hamburguer-menu:hover {
@@ -370,6 +371,7 @@ about
 
 .products-banner p {
   color: var(--clr-grey-5);
+  max-width: 25rem;
 }
 
 .products-banner a {
@@ -401,6 +403,115 @@ about
 
 @media screen and (min-width: 1178px) {
   .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* responsive with auto-fill */
+/* (1178 - 64px(4rem)) / 3 */
+
+/* .products-container {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 2rem;
+  justify-content: center;
+} */
+
+/*
+=============== 
+about
+===============
+*/
+
+.section-services {
+  padding: 4rem 0;
+}
+
+.services-banner {
+  margin-bottom: 2rem;
+}
+
+.services-banner {
+  text-align: center;
+}
+
+.services-banner h3 {
+  color: var(--clr-primary);
+  font-family: var(--ff-secondary);
+  font-size: 1.5rem;
+}
+
+.card {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.container-service-img {
+  position: relative;
+}
+
+.container-service-img img {
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+}
+
+.service-icon {
+  position: absolute;
+  color: var(--clr-primary);
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 2rem;
+  border: 1rem solid transparent;
+  border-radius: 50%;
+  background: var(--clr-primary-light);
+  border: 5px solid var(--clr-grey-10);
+  padding: 0.5rem 1rem;
+}
+
+.service-card-info {
+  padding: 3rem 0;
+  background: var(--clr-grey-10);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  text-align: center;
+}
+
+.service-card-info p {
+  max-width: 25rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+  color: var(--clr-grey-5);
+  margin-bottom: 2rem;
+}
+
+.service-card-info .btn {
+  border-radius: var(--radius);
+  text-transform: capitalize;
+  font-size: 0.875rem;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 3rem;
+}
+
+@media screen and (min-width: 778px) {
+  .service-cards {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1178px) {
+  .service-cards {
     grid-template-columns: repeat(3, 1fr);
   }
 }
