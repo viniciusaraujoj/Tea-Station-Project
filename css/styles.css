@@ -85,6 +85,10 @@ p {
   margin-bottom: 1.25rem;
 }
 
+ul {
+  list-style-type: none;
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
